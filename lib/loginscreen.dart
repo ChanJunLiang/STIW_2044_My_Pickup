@@ -170,6 +170,7 @@ class _LoginPageState extends State<LoginPage> {
         } else {
           pr.dismiss();
           _saveEmailForPassReset(_email);
+          _saveSecureCode(res.body); 
           Toast.show('Security code sent to your email', context,
               duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
           Navigator.push(context,

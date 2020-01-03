@@ -26,9 +26,7 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
-  static const String _themePreferenceKey = 'isDark';
-
-  @override
+    @override
   void initState() {
     _loadResetEmail();
     super.initState();
@@ -47,8 +45,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Image.asset(
-                  'assets/images/mylogo.png',
-                  scale: 2.0,
+                  'assets/images/logo2.png',
+                  scale: 5.0,
                 ),
                 SizedBox(
                   height: 20,
@@ -171,8 +169,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             _newPasswordController.text = "";
             _newPasswordController2.text = "";
             
-            _removePrefsExceptTheme();
-
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => LoginPage()));
           } else {
@@ -191,17 +187,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
     }
   }
-
-  void _removePrefsExceptTheme() async {
-    bool theme;
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    theme = prefs.getBool(_themePreferenceKey); //get theme value
-    prefs.clear(); //clear preferences
-    prefs.setBool(_themePreferenceKey, theme); //put back theme in preferences
-  }
-
   void _cancel() async {
-    _removePrefsExceptTheme();
 
     Navigator.pushReplacement(
         context,
