@@ -1,0 +1,4 @@
+#Sat Jan 04 02:16:12 SGT 2020
+base.0=D\:\\sem5\\mobile\\my_pickup\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex
